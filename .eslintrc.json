@@ -2,12 +2,5 @@
     "extends": "airbnb-base",
     "plugins": [
         "import"
-    ],
-
-    "files": [ "src/*.js"],
-    "excludedFiles": "*.test.js",
-    "rules": {
-    "quotes": [ 2, "single" ]
-    }
-
+    ]
 }
