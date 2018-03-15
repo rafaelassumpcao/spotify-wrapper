@@ -1,3 +1,6 @@
+/* global describe */
+/* global beforeEach */
+
 import chai, { expect } from 'chai';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
@@ -8,20 +11,20 @@ import {
   searchArtists,
   searchTracks,
   searchPlaylists,
-} from '../src/main';
+} from '../src/search';
 
 chai.use(sinonChai);
 sinonStubPromise(sinon);
 
 global.fetch = require('node-fetch');
 
-describe('Spotify Wrapper', () => {
+describe('Search', () => {
   let fetchedStub;
   let promise;
 
   beforeEach(() => {
-      fetchedStub = sinon.stub(global, 'fetch');
-      promise = fetchedStub.returnsPromise();
+    fetchedStub = sinon.stub(global, 'fetch');
+    promise = fetchedStub.returnsPromise();
   });
 
   afterEach(() => {
@@ -29,7 +32,6 @@ describe('Spotify Wrapper', () => {
   });
 
   describe('smoke tests', () => {
-
     it('should exist the search method', () => {
       expect(search).to.exist;
     });
@@ -57,7 +59,6 @@ describe('Spotify Wrapper', () => {
     //searchPlaylists
 
   });
-
   describe('Generic Search', () => {
 
     it('should call fetch function', () => {
